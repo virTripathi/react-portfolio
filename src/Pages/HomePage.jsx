@@ -1,5 +1,3 @@
-import GuestLayout from "../Layouts/GuestLayout";
-
 const HomePage = () => {
   return (
     <p className="tracking-wider max-w-44 ms-8 lg:max-w-44 lg:text-sm text-xs">

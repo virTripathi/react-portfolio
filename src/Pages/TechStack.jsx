@@ -1,5 +1,3 @@
-import GuestLayout from "../Layouts/GuestLayout";
-
 const TechStack = (props) => {
     return (
         <>

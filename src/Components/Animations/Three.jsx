@@ -64,9 +64,9 @@ export default function Three() {
     // Cleanup
     return () => {
       window.removeEventListener('resize', handleResize);
-      controls.dispose(); // Dispose of controls
+      controls.dispose();
       refContainer.current.removeChild(renderer.domElement);
-      renderer.dispose(); // Properly dispose of renderer to free up memory
+      renderer.dispose();
     };
   }, []);
 

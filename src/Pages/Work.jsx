@@ -1,5 +1,3 @@
-import GuestLayout from "../Layouts/GuestLayout";
-
 const Work = (props) => {
     return (
         <>
@@ -11,12 +9,12 @@ const Work = (props) => {
                     </li>
                     <br />
                     <li className="lg:text-3xl text-xl">Full Stack Developer
-                        <a target="_blank" href="https://www.drishtiias.com/"><p className="lg:text-sm text-xs hover:underline">VDK Eduventures</p></a>
+                        <a target="_blank" href="https://www.drishtiias.com/" rel="noopener noreferrer"><p className="lg:text-sm text-xs hover:underline">VDK Eduventures</p></a>
                         <p className="lg:text-sm text-xs">April 2023 - Feb 2024</p>
                     </li>
                     <br />
                     <li className="lg:text-3xl text-xl">Full Stack Intern
-                        <a target="_blank" href="https://www.drishtiias.com/"><p className="lg:text-sm text-xs hover:underline">VDK Eduventures</p></a>
+                        <a target="_blank" href="https://www.drishtiias.com/" rel="noopener noreferrer"><p className="lg:text-sm text-xs hover:underline">VDK Eduventures</p></a>
                         <p className="lg:text-sm text-xs">Jan 2023 - March 2023    </p>
                     </li>
                     <br />

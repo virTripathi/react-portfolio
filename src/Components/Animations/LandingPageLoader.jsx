@@ -1,4 +1,3 @@
-import { Button } from "@material-tailwind/react";
 export default function LandingPageLoader() {
     return  <>
         <div className="transition-colors duration-500  bg-slate-100 text-gray-900 dark:bg-black dark:text-gray-50 h-screen w-screen flex justify-center items-center flex-col position-relative">
