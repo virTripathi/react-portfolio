@@ -152,7 +152,7 @@ const GuestLayout = () => {
           </div>
           <div className='row-span-1 col-span-1'>
           </div>
-          <div className='row-span-1 col-span-18 flex justify-between lg:justify-center lg:gap-4 items-center transition-all dark:bg-stone-950 bg-stone-100 dark:text-stone-500 text-stone-900'>
+          <div className='row-span-1 col-span-18 flex justify-between lg:justify-center lg:gap-4 items-center dark:text-stone-500 text-stone-900'>
             <p className='' style={{fontSize:'12px'}}>
               &copy; Virat Tripathi
             </p>
