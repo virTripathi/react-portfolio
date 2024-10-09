@@ -112,19 +112,19 @@ const GuestLayout = () => {
                   <div className='text-sm lg:text-xl tracking-wide pt-2'>
                     <nav>
                       <ul className='flex flex-col gap-4'>
-                        <li className={`${currentPath=='' ? 'text-stone-300 dark:text-stone-500': ''}`}>
+                        <li className={`${currentPath==='' ? 'text-stone-300 dark:text-stone-500': ''}`}>
                           <Link  to="/">Home</Link>
                         </li>
-                        <li className={`${currentPath=='work' ? 'text-stone-300 dark:text-stone-500': ''}`}>
+                        <li className={`${currentPath==='work' ? 'text-stone-300 dark:text-stone-500': ''}`}>
                           <Link  to="/work">Work</Link>
                         </li>
-                        <li className={`${currentPath=='projects' ? 'text-stone-300 dark:text-stone-500': ''}`}>
+                        <li className={`${currentPath==='projects' ? 'text-stone-300 dark:text-stone-500': ''}`}>
                           <Link  to="/projects">Projects</Link>
                         </li>
-                        <li className={`${currentPath=='tech-stack' ? 'text-stone-300 dark:text-stone-500': ''}`}>
+                        <li className={`${currentPath==='tech-stack' ? 'text-stone-300 dark:text-stone-500': ''}`}>
                           <Link to="/tech-stack">Tech Stack</Link>
                         </li>
-                        <li className={`${currentPath=='contact' ? 'text-stone-300 dark:text-stone-500': ''}`}>
+                        <li className={`${currentPath==='contact' ? 'text-stone-300 dark:text-stone-500': ''}`}>
                           <Link  to="/contact">Contact</Link>
                         </li>
                       </ul>
