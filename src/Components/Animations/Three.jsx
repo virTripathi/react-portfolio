@@ -1,6 +1,6 @@
 import * as THREE from 'three';
 import { useEffect, useRef } from 'react';
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'; // Import OrbitControls
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 
 export default function Three() {
   const refContainer = useRef(null);
@@ -14,8 +14,10 @@ export default function Three() {
     
     renderer.setSize(window.innerWidth, window.innerHeight);
     renderer.setPixelRatio(window.devicePixelRatio);
-    if (refContainer.current) {
-      refContainer.current.appendChild(renderer.domElement);
+
+    const currentRef = refContainer.current; // Store refContainer.current in a variable
+    if (currentRef) {
+      currentRef.appendChild(renderer.domElement);
     }
 
     // Orbit Controls
@@ -42,7 +44,6 @@ export default function Three() {
     // Animation function
     const animate = () => {
       sphere.rotation.x += 0.01;
-      // sphere.rotation.y += 0.01;
       sphere.rotation.z += 0.01;
       controls.update(); // Update controls for damping to work
       renderer.render(scene, camera);
@@ -65,12 +66,15 @@ export default function Three() {
     return () => {
       window.removeEventListener('resize', handleResize);
       controls.dispose();
-      refContainer.current.removeChild(renderer.domElement);
+      if (currentRef) {
+        currentRef.removeChild(renderer.domElement);
+      }
       renderer.dispose();
     };
   }, []);
 
   return (
+    // eslint-disable-next-line
     <div ref={refContainer} style={{ width: '100%', height: '100vh', position: 'relative', zIndex: '-9999' }} />
   );
 }
