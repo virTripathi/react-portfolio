@@ -1,11 +1,10 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import HomePage from './Pages/HomePage';
 import Work from './Pages/Work';
 import TechStack from './Pages/TechStack';
 import Project from './Pages/Project';
 import Contact from './Pages/Contact';
-import ErrorPage from "./Pages/ErrorPage";
 import GuestLayout from "./Layouts/GuestLayout";
 import './index.css';
 
@@ -19,8 +18,8 @@ function App() {
           <Route path="/tech-stack" element={<TechStack />} />
           <Route path="/projects" element={<Project />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/*" element={<ErrorPage />} />
         </Route>
+        <Route path="/*" element={<Navigate to="/" />} />
       </Routes>
     </Router>
   );
