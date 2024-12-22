@@ -7,6 +7,8 @@ import Project from './Pages/Project';
 import Contact from './Pages/Contact';
 import GuestLayout from "./Layouts/GuestLayout";
 import './index.css';
+import { MobiusStrip } from './Components/Animations';
+import Maze from './Components/Animations/Maze';
 
 function App() {
   return (
@@ -19,6 +21,8 @@ function App() {
           <Route path="/projects" element={<Project />} />
           <Route path="/contact" element={<Contact />} />
         </Route>
+        <Route path="/mobius-strip" element={<MobiusStrip/>} />
+        <Route path="/maze" element={<Maze/>} />
         <Route path="/*" element={<Navigate to="/" />} />
       </Routes>
     </Router>

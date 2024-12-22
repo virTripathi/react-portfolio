@@ -2,7 +2,7 @@ import * as THREE from 'three';
 import { useEffect, useRef } from 'react';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 
-export default function Three() {
+export default function RotatingSphere() {
   const refContainer = useRef(null);
 
   useEffect(() => {
@@ -15,7 +15,7 @@ export default function Three() {
     renderer.setSize(window.innerWidth, window.innerHeight);
     renderer.setPixelRatio(window.devicePixelRatio);
 
-    const currentRef = refContainer.current; // Store refContainer.current in a variable
+    const currentRef = refContainer.current;
     if (currentRef) {
       currentRef.appendChild(renderer.domElement);
     }
@@ -75,6 +75,6 @@ export default function Three() {
 
   return (
     // eslint-disable-next-line
-    <div ref={refContainer} style={{ width: '100%', height: '100vh', position: 'relative', zIndex: '-9999' }} />
+    <div ref={refContainer} style={{ width: '100%', height: '100%', position: 'absolute', zIndex: '-9999' }} />
   );
 }

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Outlet } from 'react-router-dom';
 import LandingPageLoader from '../Components/Animations/LandingPageLoader';
-import Three from '../Components/Animations/Three';
+import { RotatingDisc } from '../Components/Animations';
 import { Link, useLocation } from 'react-router-dom';
 import { PauseIcon, PlayIcon } from '@heroicons/react/24/outline';
 
@@ -21,7 +21,7 @@ const GuestLayout = () => {
         const newState = !isPlaying;
         setIsPlaying(newState);
         const method = newState ? 'play' : 'pause';
-        backgroundMusic[method]();
+        // backgroundMusic[method]();
         return false;
       };
     }
@@ -45,7 +45,7 @@ const GuestLayout = () => {
         
         // Add an event listener for the first user interaction (hover or move)
         const playAudioOnInteraction = () => {
-          audioElement.play();
+          // audioElement.play();
           setIsPlaying(true);
           document.removeEventListener('click', playAudioOnInteraction);
         };
@@ -83,7 +83,6 @@ const GuestLayout = () => {
       </div>
       <main>
         <section id="main" className='grid grid-cols-20 grid-rows-20 h-screen gap-y-1 hidden'>
-          <Three />
           <div className='row-span-1 col-span-20'></div>
           <div className='row-span-18 col-span-1 self-center justify-self-center'>
             <div className='rotate-270  flex gap-4'>
@@ -101,14 +100,16 @@ const GuestLayout = () => {
             </p>
             </div>
           </div>
-          <div className='row-span-18 col-span-18 border-stone-500 border-2 dark:text-white text-black no-scroll' >
+          <div className='row-span-18 col-span-18 border-stone-500 border-2 dark:text-white text-black no-scroll relative z-0' >
+            {/* <RotatingDisc /> */}
+            
+            <div className='bg-green-500 absolute right-0 -z-10 rounded-full' style={{ width: 'calc(2 * 100vh)', height: 'calc(2 * 100vh)', transform: 'translateX(50%)' }}>
+            </div>
             <section className='p-2 h-fill-available' style={{ height: '-webkit-fill-available' }}>
               <div className='grid grid-cols-2 grid-rows-2 justify-center content-center h-inherit'>
                 <div className='fixed'>
-                  <div className=''>
                     <h1 className='text-4xl tracking-wider'>Virat Tripathi</h1>
                     <p className='text-sm pt-1'>Design. Develop. Deploy.</p>
-                  </div>
                   <div className='text-sm lg:text-xl tracking-wide pt-2'>
                     <nav>
                       <ul className='flex flex-col gap-4'>
