@@ -89,11 +89,11 @@
 
 .animate-increase-opacity {
     opacity: 0;
-    animation: increaseOpacity 4s steps(40,end) forwards;
+    animation: increaseOpacity 2s steps(40,end) forwards;
 }
 .animate-decrease-opacity {
     opacity: 0;
-    animation: decreaseOpacity 1s steps(40,end) forwards;
+    animation: decreaseOpacity 4s steps(40,end) forwards;
 }
 
 .animate-opacity {

@@ -3,9 +3,14 @@ const Work = (props) => {
         <>
             <div className="tracking-wider text-inherit">
                 <ul>
+                <li className="lg:text-3xl text-xl">Software Engineer
+                        <a href="https://cimpress.com//" target="_blank" rel="noopener noreferrer"><p className="lg:text-sm text-xs hover:underline">Cimpress India</p></a>
+                        <p className="lg:text-sm text-xs">Dec 2024 - Present</p>
+                    </li>
+                    <br />
                     <li className="lg:text-3xl text-xl">Jr. Software Engineer
                         <a href="https://excellediaventures.com/" target="_blank" rel="noopener noreferrer"><p className="lg:text-sm text-xs hover:underline">Excelledia Ventures</p></a>
-                        <p className="lg:text-sm text-xs">Feb 2024 - Present</p>
+                        <p className="lg:text-sm text-xs">Feb 2024 - Dec 2024</p>
                     </li>
                     <br />
                     <li className="lg:text-3xl text-xl">Full Stack Developer

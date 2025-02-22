@@ -5,23 +5,28 @@ import { MobiusStrip, RotatingDisc, RotatingSphere } from '../Components/Animati
 import { Link, useLocation } from 'react-router-dom';
 import { PauseIcon, PlayIcon } from '@heroicons/react/24/outline';
 
+const audio = new Audio('/asset/life_goes_on.mp3');
+
 const GuestLayout = () => {
   const [theme, setTheme] = useState(() => localStorage.getItem('theme') ?? 'dark');
   const [isPlaying, setIsPlaying] = useState(false);
   const location = useLocation(); 
   const currentPath = location.pathname.split('/').pop();
-  
+
 
   useEffect(() => {
-    const backgroundMusic = document.getElementById('backgroundMusic');
     const ctrl = document.getElementById('audioControl');
 
-    if (ctrl && backgroundMusic) {
+    if (ctrl && audio) {
       ctrl.onclick = function () {
         const newState = !isPlaying;
         setIsPlaying(newState);
         const method = newState ? 'play' : 'pause';
-        // backgroundMusic[method]();
+        if(method=='play') {
+          audio[method]().catch((error)=> console.log(error));
+        } else {
+          audio[method]();
+        }
         return false;
       };
     }
@@ -36,24 +41,6 @@ const GuestLayout = () => {
   }
 
   useEffect(() => {
-    
-    const audioElement = document.getElementById("backgroundMusic");
-  
-    if (audioElement) {
-      audioElement.play().catch((error) => {
-        console.log("Autoplay was prevented. Waiting for user interaction...");
-        
-        const playAudioOnInteraction = () => {
-          setIsPlaying(true);
-          document.removeEventListener('click', playAudioOnInteraction);
-        };
-  
-        document.addEventListener('click', playAudioOnInteraction, { once: true });
-      });
-    }
-  }, []);
-
-  useEffect(() => {
     const savedTheme = localStorage.getItem('theme') ?? 'dark';
     document.documentElement.classList.add(savedTheme);
     setTheme(savedTheme);
@@ -62,7 +49,7 @@ const GuestLayout = () => {
 
   return (
     <div className='relative font-sans transition-all dark:bg-stone-950 bg-stone-100 dark:text-stone-500 text-stone-200'>
-      <div id="loader" className="absolute animate-opacity loading-container">
+      <div id="loader" className="absolute animate-decrease-opacity loading-container">
         <LandingPageLoader />
       </div>
       <main>
