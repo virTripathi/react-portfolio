@@ -27,7 +27,7 @@ const TechStack = (props) => {
                         <br />
                         <p className="lg:text-sm text-xs">Docker, CI/CD, Github Actions</p>
                     </li>
-                    <hr />
+                    <br />
                 </ul>
             </div>
         </>

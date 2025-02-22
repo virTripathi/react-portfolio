@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Outlet } from 'react-router-dom';
 import LandingPageLoader from '../Components/Animations/LandingPageLoader';
-import { RotatingDisc } from '../Components/Animations';
+import { MobiusStrip, RotatingDisc, RotatingSphere } from '../Components/Animations';
 import { Link, useLocation } from 'react-router-dom';
 import { PauseIcon, PlayIcon } from '@heroicons/react/24/outline';
 
@@ -43,9 +43,7 @@ const GuestLayout = () => {
       audioElement.play().catch((error) => {
         console.log("Autoplay was prevented. Waiting for user interaction...");
         
-        // Add an event listener for the first user interaction (hover or move)
         const playAudioOnInteraction = () => {
-          // audioElement.play();
           setIsPlaying(true);
           document.removeEventListener('click', playAudioOnInteraction);
         };
@@ -59,30 +57,16 @@ const GuestLayout = () => {
     const savedTheme = localStorage.getItem('theme') ?? 'dark';
     document.documentElement.classList.add(savedTheme);
     setTheme(savedTheme);
-
-    const timer = setTimeout(() => {
-      const loader = document.getElementById('loader');
-      const main = document.getElementById('main');
-
-      if (loader && main) {
-        loader.classList.add('hidden');
-        main.classList.add('animate-increase-opacity');
-        main.classList.remove('hidden');
-        main.classList.add('block');
-      }
-    }, 2000);
-
-    return () => clearTimeout(timer);
   }, []);
   
 
   return (
-    <div className='font-sans transition-all dark:bg-stone-950 bg-stone-100 dark:text-stone-500 text-stone-200'>
-      <div id="loader" className="animate-increase-opacity loading-container">
+    <div className='relative font-sans transition-all dark:bg-stone-950 bg-stone-100 dark:text-stone-500 text-stone-200'>
+      <div id="loader" className="absolute animate-opacity loading-container">
         <LandingPageLoader />
       </div>
       <main>
-        <section id="main" className='grid grid-cols-20 grid-rows-20 h-screen gap-y-1 hidden'>
+        <section id="main" className='absolute grid grid-cols-20 grid-rows-20 h-screen gap-y-1 opacity-0 animate-increase-opacity delay-16 dark:bg-stone-950 bg-stone-100 dark:text-stone-500 text-stone-200'>
           <div className='row-span-1 col-span-20'></div>
           <div className='row-span-18 col-span-1 self-center justify-self-center'>
             <div className='rotate-270  flex gap-4'>
@@ -101,9 +85,9 @@ const GuestLayout = () => {
             </div>
           </div>
           <div className='row-span-18 col-span-18 border-stone-500 border-2 dark:text-white text-black no-scroll relative z-0' >
-            {/* <RotatingDisc /> */}
+            <RotatingSphere />
             
-            <div className='bg-green-500 absolute right-0 -z-10 rounded-full' style={{ width: 'calc(2 * 100vh)', height: 'calc(2 * 100vh)', transform: 'translateX(50%)' }}>
+            <div className='bg-green-500 absolute right-0 -z-10 rounded-full' >
             </div>
             <section className='p-2 h-fill-available' style={{ height: '-webkit-fill-available' }}>
               <div className='grid grid-cols-2 grid-rows-2 justify-center content-center h-inherit'>

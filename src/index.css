@@ -89,12 +89,22 @@
 
 .animate-increase-opacity {
     opacity: 0;
-    animation: increaseOpacity 1s steps(40,end) forwards;
+    animation: increaseOpacity 4s steps(40,end) forwards;
 }
 .animate-decrease-opacity {
     opacity: 0;
     animation: decreaseOpacity 1s steps(40,end) forwards;
 }
+
+.animate-opacity {
+    opacity: 0;
+    animation: toggleOpacity 4s steps(40,end) forwards;
+}
+
+.delay-16 {
+    animation-delay: 4s;
+}
+
 @keyframes increaseOpacity {
     from {opacity: 0; display: none;}
     to {opacity: 1;}
@@ -104,6 +114,18 @@
 @keyframes decreaseOpacity {
     from {opacity: 1; display: block;}
     to {opacity: 0; display: none;}
+}
+
+@keyframes toggleOpacity {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
 }
 
 .page-container {

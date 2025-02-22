@@ -77,6 +77,6 @@ export default function RotatingDisc() {
   }, []);
 
   return (
-    <div ref={refContainer} style={{ width: '100%', height: '100%', position: 'absolute', zIndex: '-9999' }} />
+    <div ref={refContainer} style={{ width: '100%', height: '80%', position: 'fixed', zIndex: '-9999' }} />
   );
 }

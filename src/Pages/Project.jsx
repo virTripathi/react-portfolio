@@ -32,7 +32,7 @@ const Project = (props) => {
                         <br />
                         <p className="text-xs lg:text-sm">Laravel + Angular</p>
                     </li>
-                    <hr />
+                    <br />
                 </ul>
             </div>
         </>
