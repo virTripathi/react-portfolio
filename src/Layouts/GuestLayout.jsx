@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Outlet } from 'react-router-dom';
 import LandingPageLoader from '../Components/Animations/LandingPageLoader';
-import { MobiusStrip, RotatingDisc, RotatingSphere } from '../Components/Animations';
+import { RotatingSphere } from '../Components/Animations';
 import { Link, useLocation } from 'react-router-dom';
 import { PauseIcon, PlayIcon } from '@heroicons/react/24/outline';
 
@@ -22,7 +22,7 @@ const GuestLayout = () => {
         const newState = !isPlaying;
         setIsPlaying(newState);
         const method = newState ? 'play' : 'pause';
-        if(method=='play') {
+        if(method==='play') {
           audio[method]().catch((error)=> console.log(error));
         } else {
           audio[method]();
