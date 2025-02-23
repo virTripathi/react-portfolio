@@ -1,36 +1,27 @@
-const TechStack = (props) => {
+import { useEffect, useState } from "react";
+
+const TechStack = () => {
+    const [techStack, setTechStack] = useState([]);
+
+    useEffect(() => {
+        fetch("/data.json")
+            .then((response) => response.json())
+            .then((data) => setTechStack(data.tech_stack))
+            .catch((error) => console.error("Error loading JSON:", error));
+    }, []);
+
     return (
-        <>
-            <div className="tracking-wider text-inherit">
-                <ul>
-                    <li className="lg:text-3xl text-xl">Backend
-                        <p className="lg:text-sm text-xs">Laravel, CakePHP</p>
-                    </li>
-                    <br />
-                    <li className="lg:text-3xl text-xl">Frontend
-                        <p className="lg:text-sm text-xs">JavaScript, Three.js, Angular, React, HTML5, CSS3, Tailwind, Bootstrap</p>
-                    </li>
-                    <br />
-                    <li className="lg:text-3xl text-xl">Database Management
-                        <p className="lg:text-sm text-xs">MSSQL, MySQL</p>
-                    </li>
-                    <br />
-                    <li className="lg:text-3xl text-xl">Version Control
-                        <p className="lg:text-sm text-xs">Git, Github, Bitbucket, Gitlab</p>
-                    </li>
-                    <br />
-                    <li className="lg:text-3xl text-xl">Deployments
-                        <p className="lg:text-sm text-xs">AWS, GCP</p>
-                    </li>
-                    <br />
-                    <li className="lg:text-3xl text-xl">Others
+        <div className="tracking-wider text-inherit">
+            <ul>
+                {techStack.map((stack, index) => (
+                    <li key={index} className="lg:text-3xl text-xl">
+                        {stack.title}
+                        <p className="lg:text-sm text-xs">{stack.technologies.join(", ")}</p>
                         <br />
-                        <p className="lg:text-sm text-xs">Docker, CI/CD, Github Actions</p>
                     </li>
-                    <br />
-                </ul>
-            </div>
-        </>
+                ))}
+            </ul>
+        </div>
     );
 };
 

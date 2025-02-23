@@ -1,0 +1,181 @@
+{
+    "name": "Virat Tripathi",
+    "sub_text": "Design. Develop. Deploy",
+    "pages": {
+        "home": "Home",
+        "work": "Work",
+        "projects": "Projects",
+        "tech_stack": "Tech Stack",
+        "contact": "Contact"
+    },
+    "home_text": "Hey, this is Virat. I have good hands-on knowledge in PHP and JavaScript frameworks such as Laravel, React, Angular, and ExpressJS, along with User Interface technologies like HTML5, CSS, Tailwind, and Bootstrap. Good knowledge in Software Development Processes with exposure to agile methodologies. Self-motivated and accomplished software professional with 2 years of commendable experience in developing web applications, RESTful APIs, and responsive user interfaces. Good experience in creating scalable architectures, optimizing system performance, and collaborating in team environments.",
+    "works": [
+        {
+            "title": "Software Engineer",
+            "company": "Cimpress India",
+            "company_url": "https://cimpress.com",
+            "timeline": "Dec 2024 - Present"
+        },
+        {
+            "title": "Jr. Software Engineer",
+            "company": "Excelledia Ventures",
+            "company_url": "https://excellediaventures.com/",
+            "timeline": "Feb 2024 - Dec 2024"
+        },
+        {
+            "title": "Full Stack Developer",
+            "company": "VDK Eduventures",
+            "company_url": "https://www.drishtiias.com/",
+            "timeline": "April 2023 - Feb 2024"
+        },
+        {
+            "title": "Full Stack Intern",
+            "company": "VDK Eduventures",
+            "company_url": "https://www.drishtiias.com/",
+            "timeline": "Jan 2023 - March 2023"
+        }
+    ],
+    "projects": [
+        {
+            "title": "Admin Dashboard",
+            "url": "https://github.com/virTripathi/react-dashboard",
+            "technologies": [
+                "React"
+            ]
+        },
+        {
+            "title": "Batch Processor",
+            "url": "https://github.com/virTripathi/node_js_batch_processing",
+            "technologies": [
+                "Angular",
+                "NodeJS",
+                "Laravel"
+            ]
+        },
+        {
+            "title": "Mini Jarvis",
+            "url": "https://github.com/virTripathi/mini-jarvis",
+            "technologies": [
+                "Laravel",
+                "React"
+            ]
+        },
+        {
+            "title": "WooCommerce Integration",
+            "url": "https://github.com/virTripathi/woocommerce_api_integration",
+            "technologies": [
+                "Laravel",
+                "WooCommerce"
+            ]
+        },
+        {
+            "title": "Cashier",
+            "url": "https://github.com/virTripathi/laravel_cashier",
+            "technologies": [
+                "Laravel",
+                "Angular",
+                "Stripe"
+            ]
+        },
+        {
+            "title": "Tradmed",
+            "url": "",
+            "technologies": [
+                "Laravel",
+                "Angular"
+            ]
+        }
+    ],
+    "tech_stack": [
+        {
+            "title": "Backend",
+            "technologies": [
+                "Laravel",
+                "CakePHP",
+                "NodeJS",
+                "NestJS"
+            ]
+        },
+        {
+            "title": "Frontend",
+            "technologies": [
+                "JavaScript",
+                "Three.js",
+                "Angular",
+                "React",
+                "HTML5",
+                "CSS3",
+                "Tailwind",
+                "Bootstrap"
+            ]
+        },
+        {
+            "title": "Database Management",
+            "technologies": [
+                "MSSQL",
+                "MySQL"
+            ]
+        },
+        {
+            "title": "Version Control",
+            "technologies": [
+                "Git",
+                "GitHub",
+                "Bitbucket",
+                "GitLab"
+            ]
+        },
+        {
+            "title": "Deployments",
+            "technologies": [
+                "AWS",
+                "GCP"
+            ]
+        },
+        {
+            "title": "Others",
+            "technologies": [
+                "Docker",
+                "CI/CD",
+                "GitHub Actions"
+            ]
+        }
+    ],
+    "contacts": [
+        {
+            "name": "GitHub",
+            "icon": "GithubIcon",
+            "url": "https://github.com/virTripathi"
+        },
+        {
+            "name": "Instagram",
+            "icon": "InstagramIcon",
+            "url": "https://www.instagram.com/vir_tripathi/"
+        },
+        {
+            "name": "LinkedIn",
+            "icon": "LinkedinIcon",
+            "url": "https://www.linkedin.com/in/virat-tripathi-584b67222/"
+        },
+        {
+            "name": "WhatsApp",
+            "icon": "WhatsappIcon",
+            "url": "https://wa.me/+919695397301"
+        },
+        {
+            "name": "Pinkary",
+            "icon": "PinkaryIcon",
+            "url": "https://pinkary.com/@virat"
+        },
+        {
+            "name": "Gmail",
+            "icon": "GmailIcon",
+            "url": "mailto:viratofficial07@gmail.com"
+        },
+        {
+            "name": "Google Form",
+            "icon": "GoogleFormIcon",
+            "url": "https://docs.google.com/forms/d/e/1FAIpQLSfCho0U9nXHQjX83pQlXHhvV4o-UpjZR-H0csNumreXXmQMYQ/viewform?usp=sf_link"
+        }
+    ]
+}

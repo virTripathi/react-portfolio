@@ -1,29 +1,28 @@
+import { useEffect, useState } from "react";
+
 const Work = (props) => {
+    const [works, setWorks] = useState([]);
+
+    useEffect(() => {
+        fetch("/data.json")
+            .then((response) => response.json())
+            .then((data) => setWorks(data.works))
+            .catch((error) => console.error("Error loading JSON:", error));
+    }, []);
     return (
         <>
             <div className="tracking-wider text-inherit">
-                <ul>
-                <li className="lg:text-3xl text-xl">Software Engineer
-                        <a href="https://cimpress.com//" target="_blank" rel="noopener noreferrer"><p className="lg:text-sm text-xs hover:underline">Cimpress India</p></a>
-                        <p className="lg:text-sm text-xs">Dec 2024 - Present</p>
+            <ul className="space-y-4">
+                {works.map((job, index) => (
+                    <li key={index}>
+                        <h3 className="lg:text-3xl text-xl">{job.title}</h3>
+                        <a href={job.company_url} target="_blank" rel="noopener noreferrer" className="lg:text-sm text-xs hover:underline">
+                            {job.company}
+                        </a>
+                        <p className="lg:text-sm text-xs">{job.timeline}</p>
                     </li>
-                    <br />
-                    <li className="lg:text-3xl text-xl">Jr. Software Engineer
-                        <a href="https://excellediaventures.com/" target="_blank" rel="noopener noreferrer"><p className="lg:text-sm text-xs hover:underline">Excelledia Ventures</p></a>
-                        <p className="lg:text-sm text-xs">Feb 2024 - Dec 2024</p>
-                    </li>
-                    <br />
-                    <li className="lg:text-3xl text-xl">Full Stack Developer
-                        <a target="_blank" href="https://www.drishtiias.com/" rel="noopener noreferrer"><p className="lg:text-sm text-xs hover:underline">VDK Eduventures</p></a>
-                        <p className="lg:text-sm text-xs">April 2023 - Feb 2024</p>
-                    </li>
-                    <br />
-                    <li className="lg:text-3xl text-xl">Full Stack Intern
-                        <a target="_blank" href="https://www.drishtiias.com/" rel="noopener noreferrer"><p className="lg:text-sm text-xs hover:underline">VDK Eduventures</p></a>
-                        <p className="lg:text-sm text-xs">Jan 2023 - March 2023    </p>
-                    </li>
-                    <br />
-                </ul>
+                ))}
+            </ul>
             </div>
         </>
     );
